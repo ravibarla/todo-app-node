@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 
-mongoose.connect(`mongodb://127.0.0.1:27017/todos_db`);
-// mongoose.connect(
-//   `mongodb+srv://ravibarla1:ITN4XohS6s4A8E13@cluster0.znxw3pz.mongodb.net/?retryWrites=true&w=majority`
-// );
+// mongoose.connect(`mongodb://127.0.0.1:27017/todos_db`);
+mongoose.connect(
+  `mongodb+srv://ravibarla1:bH8a3cUqM28UnXCQ@cluster0.amiwk1t.mongodb.net/?retryWrites=true&w=majority
+  `
+);
 
 export const db = mongoose.connection;
 
