@@ -4,7 +4,7 @@ import path from "path";
 import expressEjsLayouts from "express-ejs-layouts";
 import { db } from "./config/mongoose.js";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3100;
 
 const app = express();
 
@@ -24,4 +24,4 @@ app.use(express.json());
 app.listen(PORT, () => {
   console.log("server running in port :", PORT);
 });
-app.use("/",router);
+app.use("/", router);
