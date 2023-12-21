@@ -1,0 +1,42 @@
+<div class="container p-2">
+    <div class="container">
+        <ul style="list-style: none;" class="">
+
+            <% todos.forEach((todo)=>{ %>
+                <li class="d-flex justify-content-start align-items-center my-2">
+                    <div class="px-5">
+                        <p>
+                            <% if(todo.status=="done"){%>
+                                <del>
+                                    <strong>
+                                        <%=todo.title%>
+                                    </strong>
+                                </del>
+                                <%}else{%>
+                                    <strong>
+                                        <%= todo.title%>
+                                    </strong>
+                                    <%}%>
+                        </p>
+
+                    </div>
+                    <form action="/toggle/<%= todo._id%>" method="post">
+                        <button class="btn btn-success btn-sm mr-2" type="submit">
+                            <%= todo.status%>
+                        </button>
+                    </form>
+
+
+                    <a href="/edit/<%= todo._id%>" class="mx-2"><button class="btn btn-warning"
+                            type="button">EDIT</button></a>
+                    <form action="/remove/<%=todo._id%>" class="ms-2" method="post">
+                        <button class="btn btn-danger btn-sm " type="submit">DELETE</button>
+                    </form>
+                </li>
+                <%})%>
+        </ul>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <a href="/add"><button class="btn btn-info">ADD A TODO</button></a>
+    </div>
+</div>
