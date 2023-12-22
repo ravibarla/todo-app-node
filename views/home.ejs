@@ -2,19 +2,21 @@
     <div class="container">
         <ul style="list-style: none;" class="">
 
-            <% todos.forEach((todo)=>{ %>
+            <% todos.forEach((todo,i)=>{ %>
                 <li class="d-flex justify-content-start align-items-center my-2">
                     <div class="px-5">
+
                         <p>
                             <% if(todo.status=="done" ){%>
                                 <del>
-
-                                    <%=todo.title%>
+                                    <%=i+1%>
+                                        <%=todo.title%>
 
                                 </del>
                                 <%}else{%>
                                     <strong>
-                                        <%= todo.title%>
+                                        <%=i+1%>
+                                            <%= todo.title%>
                                     </strong>
                                     <%}%>
                         </p>
